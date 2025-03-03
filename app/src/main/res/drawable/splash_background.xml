@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/black"/> <!-- Background Color -->
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/my_logo" /> <!-- Replace 'logo' with your PNG file name -->
+    </item>
+</layer-list>
