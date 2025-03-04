@@ -26,16 +26,29 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
+    // Add packagingOptions to avoid duplicates
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
 }
 
 dependencies {
-
+    // Existing dependencies
     implementation libs.appcompat
-    implementation libs.material
     implementation libs.material
     implementation libs.volley
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
+    // Clover SDK dependencies
+    implementation 'com.clover.sdk:clover-android-sdk:latest.release'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    // For Bluetooth functionality
+    implementation 'androidx.core:core:1.12.0'
 }
